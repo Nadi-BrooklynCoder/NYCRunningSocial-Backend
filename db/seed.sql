@@ -5,8 +5,8 @@ INSERT INTO users (username, email, password, age, dob, profile_pic, is_active, 
 ('Paul Rudd', 'prudd@gmail.com', 'password456', 55, '1969-02-06', 'https://ibb.co/947z4ts', FALSE, 'male');
 
 INSERT INTO locations (location, address, user_id) VALUES
-('Central Park', '{"number": "1", "street": "Central Park West", "borough": "Manhattan", "zipcode": "10023"}', '1'),
-('Prospect Park', '{"number": "95", "street": "Prospect Park West", "borough": "Brooklyn", "zipcode": "11215"}', '2');
+('WEST 100 STREET', '{"borough": "Manhattan", "zipcode": "10023"}', 1),
+('PROSPECT PARK WEST', '{"borough": "Brooklyn", "zipcode": "11215"}', 2);
 
 INSERT INTO paths (name, directions, miles, location_id) VALUES
 ('Central Park Loop', 'Starting Point: 59th Street & 7th Avenue; Ending Point: 59th Street & 7th Avenue; Elevation Gain: 290 feet / 88 meters; Terrain: Pavement; Route: The loop circles the entire park, connecting East Drive and West Drive at Center Drive (bottom of the loop) and at Central Park North & Adam Clayton Powell Jr. Blvd (top of the loop)', 6, '1'),

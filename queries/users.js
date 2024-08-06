@@ -18,7 +18,19 @@ const getUser = async (id) => {
     };
 };
 
+const createUser = async (user) => {
+    try {
+        const newUser = await db.one(
+            "INSERT INTO users (username, email, password, age, dob, profile_pic, is_active, gender) VALUES($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *", [user.username, user.email, user.password, user.age, user.dob, user.profile_pic, user.is_active, user.gender]
+        );
+        return newUser
+    } catch(error) {
+        return error;
+    }
+}
+
 module.exports = {
     getAllUsers,
-    getUser
+    getUser, 
+    createUser
 };

@@ -7,7 +7,8 @@ users.use('/:user_id/locations', locationsController);
 
 const {
     getAllUsers,
-    getUser
+    getUser,
+    createUser
 } = require("../queries/users");
 
 users.get("/", async (req, res) => {
@@ -28,6 +29,15 @@ users.get("/:id", async (req, res) => {
         res.json(user)
     } else {
         res.status(404).json({ error: "not found" });
+    };
+});
+
+users.post("/", async (req, res) => {
+    try {
+        const user = await createUser(req.body);
+        res.json(user);
+    } catch(error) {
+        res.status(400).json({ error: error });
     };
 });
 
