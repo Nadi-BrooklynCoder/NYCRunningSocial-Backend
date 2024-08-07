@@ -1,8 +1,9 @@
 \c nycrunningsocial_dev
 
 INSERT INTO users (username, email, password, age, dob, profile_pic, is_active, gender) VALUES
-('Nadia Matos', 'nmatos@gmail.com', 'password123', 32, '1991-11-23', 'https://ibb.co/MBw8dX4', TRUE, 'female'),
-('Paul Rudd', 'prudd@gmail.com', 'password456', 55, '1969-02-06', 'https://ibb.co/947z4ts', FALSE, 'male');
+('Nadia Matos', 'nmatos@gmail.com', 'password123', 32, '1991-11-23', '', TRUE, 'female'),
+('Paul Rudd', 'prudd@gmail.com', 'password456', 55, '1969-02-06', '', FALSE, 'male');
+
 
 INSERT INTO locations (location, address, user_id) VALUES
 ('WEST 100 STREET', 'Manhattan 10023', 1),
