@@ -31,14 +31,16 @@ const createUser = async (user) => {
 
 const deleteUser = async (id) => {
     try {
-        const deletedUser = await db.one(
-            "DELETE FROM users WHERE id=$1 RETURNING *", [id]
-        );
-        return deletedUser;
+      const deletedUser = await db.oneOrNone(
+        "DELETE FROM users WHERE id=$1 RETURNING *", [id]
+      );
+      console.log('Deleted User:', deletedUser);
+      return deletedUser;
     } catch (error) {
-        return error;
-    };
-};
+      return error;
+    }
+  };
+  
 
 const updateUser = async (id, user) => {
     try {

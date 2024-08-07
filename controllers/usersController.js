@@ -48,13 +48,14 @@ users.post("/", async (req, res) => {
 users.delete("/:id", async (req, res) => {
     const { id } = req.params;
     const deletedUser = await deleteUser(id);
-
-    if(deletedUser.id) {
-        res.status(200).json("User deleted");
+  
+    if (deletedUser) {
+      res.status(200).json("User deleted");
     } else {
-        res.status(404).json("User not found")
-    };
-});
+      res.status(404).json("User not found");
+    }
+  });
+  
 
 users.put("/:id", async (req, res) => {
     const { id } = req.params;
