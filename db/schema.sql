@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS locations CASCADE;
 CREATE TABLE locations (
     id SERIAL PRIMARY KEY,
     location VARCHAR(255) NOT NULL,
-    address JSONB NOT NULL,
+    address VARCHAR(255) NOT NULL,
     user_id INTEGER REFERENCES users (id)
     ON DELETE CASCADE
 );
